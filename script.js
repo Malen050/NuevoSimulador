@@ -44,7 +44,20 @@ while(seleccion != "no") {
     let producto = prompt('Agrega un producto a tu carrito')
     let precio = 0
 
-    if(producto == 'Anillo de oro'  || producto == 'Anillo de flor' || producto == 'Collar de diamantes' || producto == 'Piedra amatista' || producto == 'Corona' || producto == 'Collar piedras'){
+    /*function buscar_producto(producto){
+        return productos.nombre == producto
+    }*/
+
+    let resultado_busqueda = productos.find(productos => productos == producto)  
+
+    console.log(resultado_busqueda)
+
+   /* if (seleccion == "si"){
+        let resultado_busqueda = productos.find(buscar_producto)
+   }*/
+
+    //console.log(resultado_busqueda)
+  /*  if(producto == 'Anillo de oro'  || producto == 'Anillo de flor' || producto == 'Collar de diamantes' || producto == 'Piedra amatista' || producto == 'Corona' || producto == 'Collar piedras'){
         switch (producto) {
             case "Anillo de oro":
                 precio = 1500;
@@ -66,7 +79,7 @@ while(seleccion != "no") {
                 break; 
               default:
                 break;                            
-        }
+        }*/
         
         
         let unidades = parseInt(prompt('¿Cuantas unidades quiere llevar?'))
@@ -75,13 +88,13 @@ while(seleccion != "no") {
         carrito.push({producto, precio, unidades})
         console.log(carrito)
 
-    }   else{
-        alert('no tenemos ese producto')
-    }
+    //} //  else{
+      //  alert('no tenemos ese producto')
+    //}
 
     seleccion = prompt('¿Desea seguir comprando?')
     
-
+ 
     while(seleccion === "no"){
         alert("Gracias por la compra! Hasta pronto")
         carrito.forEach((carritoFinal) => {
